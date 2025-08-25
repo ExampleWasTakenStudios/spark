@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@radix-ui/react-navigation-menu':
+        specifier: ^1.2.14
+        version: 1.2.14(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@tdanks2000/tmdb-wrapper':
+        specifier: ^1.3.3
+        version: 1.3.3
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1274,6 +1280,10 @@ packages:
     resolution: {integrity: sha512-JRexava80NijI8cTcLXNM3nQL5A0ptTHI8oJLLe8z1MpNB6p5J4WCdJJP8RoyHu8/eB1JzEdbpH86eGfbuaezQ==}
     peerDependencies:
       vite: ^5.2.0 || ^6
+
+  '@tdanks2000/tmdb-wrapper@1.3.3':
+    resolution: {integrity: sha512-ywtkaES57mscsIfCx7TnpLKDjTz6ZpAjoX4U2QadS5M1asBU4hgEAl0ZPCJc5wOPx72uSYgrFB/YxwMKM3rRiQ==}
+    engines: {node: '>=16'}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -3549,6 +3559,8 @@ snapshots:
       lightningcss: 1.29.2
       tailwindcss: 4.0.15
       vite: 6.2.3(@types/node@24.3.0)(jiti@2.4.2)(lightningcss@1.29.2)
+
+  '@tdanks2000/tmdb-wrapper@1.3.3': {}
 
   '@types/estree@1.0.6': {}
 
