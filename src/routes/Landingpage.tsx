@@ -15,7 +15,7 @@ export const Landingpage = () => {
       }}
     >
       <div className="relative z-10 w-full h-full bg-background/40">
-        <div className="mt-52 flex flex-col items-center gap-10">
+        <div className="mt-52 px-32 flex flex-col items-center gap-10">
           <WritingText
             text="Discover. Explore. Enjoy."
             transition={{
@@ -25,7 +25,7 @@ export const Landingpage = () => {
             inView
             className="text-center text-7xl font-semibold tracking-tighter"
           />
-          <h2>Browse movies and TV shows, where to watch them instantly.</h2>
+          <h2 className="hidden md:block text-center">Browse movies and TV shows, where to watch them instantly.</h2>
         </div>
       </div>
     </BubbleBackground>
