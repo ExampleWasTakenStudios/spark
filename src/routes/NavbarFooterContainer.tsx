@@ -24,7 +24,6 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import {
   SidebarGroup,
@@ -44,7 +43,7 @@ export const NavbarFooterContainer = () => {
   return (
     <>
       <div className="bg-background sticky top-0 z-50">
-        <div className="flex flex-row justify-around items-center p-6 sticky top-0 z-50">
+        <div className="bg-background/70 backdrop-blur-default flex flex-row justify-around items-center p-6 sticky top-0 left-0 right-0 z-50">
           {/* Mobile Navbar */}
           <div className="sm:hidden">
             <Sheet>
@@ -175,11 +174,13 @@ export const NavbarFooterContainer = () => {
           </div>
         </div>
 
-        <Separator className="dark:bg-foreground" decorative />
+        {/* <Separator className="dark:bg-foreground" decorative /> */}
       </div>
 
       {/* Outlet */}
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
 
       {/* Footer */}
       <footer className="pt-20 pb-10 px-10 flex flex-col justify-center items-center gap-10">

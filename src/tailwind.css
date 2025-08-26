@@ -65,24 +65,10 @@
     --font-inter: "Inter", serif;
     --font-weight-superlight: 100;
     --animate-blur-fade: blur-fade-in 1s ease-in-out 1;
-
-    @keyframes blur-fade-in {
-        from {
-            backdrop-filter: blur(0px);
-        }
-        to {
-            backdrop-filter: blur(20px);
-        }
-    }
-
-    @keyframes blur-fade-out {
-        from {
-            backdrop-filter: blur(20px);
-        }
-        to {
-            backdrop-filter: blur(0px);
-        }
-    }
+    --color-special-blue: #0894FF;
+    --color-special-purple: #C959DD;
+    --color-special-red: #FF2E54;
+    --color-special-orange: #FF9004;
 }
 
 @utility backdrop-blur-default {

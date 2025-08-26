@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="light">
       <TMDBProvider tmdb={new TMDB(SPARK.ACCESS_TOKEN)}>
-        <div className="font-geist">
+        <div className="font-geist overflow-hidden">
           <RouterProvider router={router} />
         </div>
       </TMDBProvider>

@@ -90,15 +90,15 @@ function BubbleBackground({
         </defs>
       </svg>
 
-      <div className="absolute inset-0" style={{ filter: 'url(#goo) blur(40px)' }}>
+      <div className="absolute inset-0" style={{ filter: 'url(#goo) blur(40px)', overflow: 'hidden' }}>
         <motion.div
-          className="absolute rounded-full size-[80%] top-[10%] left-[10%] mix-blend-hard-light bg-[radial-gradient(circle_at_center,rgba(var(--first-color),0.8)_0%,rgba(var(--first-color),0)_50%)]"
+          className="overflow-hidden absolute rounded-full size-[80%] top-[10%] left-[10%] mix-blend-hard-light bg-[radial-gradient(circle_at_center,rgba(var(--first-color),0.8)_0%,rgba(var(--first-color),0)_50%)]"
           animate={{ y: [-50, 50, -50] }}
           transition={{ duration: 30, ease: 'easeInOut', repeat: Infinity }}
         />
 
         <motion.div
-          className="absolute inset-0 flex justify-center items-center origin-[calc(50%-400px)]"
+          className="overflow-hidden absolute inset-0 flex justify-center items-center origin-[calc(50%-400px)]"
           animate={{ rotate: 360 }}
           transition={{
             duration: 20,
@@ -111,7 +111,7 @@ function BubbleBackground({
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 flex justify-center items-center origin-[calc(50%+400px)]"
+          className="overflow-hidden absolute inset-0 flex justify-center items-center origin-[calc(50%+400px)]"
           animate={{ rotate: 360 }}
           transition={{ duration: 40, ease: 'linear', repeat: Infinity }}
         >
@@ -119,13 +119,13 @@ function BubbleBackground({
         </motion.div>
 
         <motion.div
-          className="absolute rounded-full size-[80%] top-[10%] left-[10%] mix-blend-hard-light bg-[radial-gradient(circle_at_center,rgba(var(--fourth-color),0.8)_0%,rgba(var(--fourth-color),0)_50%)] opacity-70"
+          className="overflow-hidden absolute rounded-full size-[80%] top-[10%] left-[10%] mix-blend-hard-light bg-[radial-gradient(circle_at_center,rgba(var(--fourth-color),0.8)_0%,rgba(var(--fourth-color),0)_50%)] opacity-70"
           animate={{ x: [-50, 50, -50] }}
           transition={{ duration: 40, ease: 'easeInOut', repeat: Infinity }}
         />
 
         <motion.div
-          className="absolute inset-0 flex justify-center items-center origin-[calc(50%_-_800px)_calc(50%_+_200px)]"
+          className="overflow-hidden absolute inset-0 flex justify-center items-center origin-[calc(50%_-_800px)_calc(50%_+_200px)]"
           animate={{ rotate: 360 }}
           transition={{ duration: 20, ease: 'linear', repeat: Infinity }}
         >
@@ -134,7 +134,7 @@ function BubbleBackground({
 
         {interactive && (
           <motion.div
-            className="absolute rounded-full size-full mix-blend-hard-light bg-[radial-gradient(circle_at_center,rgba(var(--sixth-color),0.8)_0%,rgba(var(--sixth-color),0)_50%)] opacity-70"
+            className="overflow-hidden absolute rounded-full size-full mix-blend-hard-light bg-[radial-gradient(circle_at_center,rgba(var(--sixth-color),0.8)_0%,rgba(var(--sixth-color),0)_50%)] opacity-70"
             style={{
               x: springX,
               y: springY,
