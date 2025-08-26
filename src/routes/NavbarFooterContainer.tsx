@@ -52,7 +52,7 @@ export const NavbarFooterContainer = () => {
                 <SidebarProvider className="flex flex-col">
                   {NAV_ROUTES.map((routeGroup) => {
                     return (
-                      <SidebarGroup>
+                      <SidebarGroup key={routeGroup.title}>
                         <SidebarGroupLabel>{routeGroup.title}</SidebarGroupLabel>
 
                         {routeGroup.routes.map((route) => {
@@ -83,49 +83,34 @@ export const NavbarFooterContainer = () => {
         {/* Desktop Navbar */}
         <NavigationMenu className="hidden sm:block">
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Movies</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  <ListItem title="Popular" href="/movies/popular">
-                    Discover what other people watch.
-                  </ListItem>
-                  <ListItem title="Now Playing" href="/movies/now-playing">
-                    Movies that are currently in theaters.
-                  </ListItem>
-                  <ListItem title="Top Rated" href="/movies/top-rated">
-                    Discover what other people like with Top Rated Movies only.
-                  </ListItem>
-                  <ListItem title="Upcoming" href="/movies/upcoming">
-                    Discover what the future holds and plan your next visit to your local theater.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>TV Shows</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  <ListItem title="Airing Today" href="/tv/airing-today">
-                    Don&apos;t now what to watch tonight? See what&apos;s on.
-                  </ListItem>
-                  <ListItem title="On the Air" href="/tv/on-the-air">
-                    Get an overview of what&apos;s airing in the next seven days.
-                  </ListItem>
-                  <ListItem title="Popular" href="/tv/popular">
-                    Seeking inspiration? Discover what other people are currently into.
-                  </ListItem>
-                  <ListItem title="Top Rated" href="/tv/top-rated">
-                    Find the perfect match with Top Rated shows only.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link to="/about">About</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+            {NAV_ROUTES.map((routeGroup) => {
+              if (routeGroup.routes.length === 1) {
+                return (
+                  <NavigationMenuItem key={routeGroup.routes[0].title}>
+                    <NavigationMenuLink asChild>
+                      <Link to={routeGroup.routes[0].path}>{routeGroup.routes[0].title}</Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                );
+              }
+
+              return (
+                <NavigationMenuItem key={routeGroup.title}>
+                  <NavigationMenuTrigger>{routeGroup.title}</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {routeGroup.routes.map((route) => {
+                        return (
+                          <ListItem title={route.title} href={route.path} key={route.title}>
+                            {route.description}
+                          </ListItem>
+                        );
+                      })}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              );
+            })}
           </NavigationMenuList>
         </NavigationMenu>
         {/* Desktop Account Section */}
