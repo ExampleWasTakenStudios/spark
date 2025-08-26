@@ -25,9 +25,7 @@ export const Landingpage = () => {
             inView
             className="text-center text-7xl font-semibold tracking-tighter"
           />
-          <h2 className="hidden md:block text-center">
-            Browse movies and TV shows, and where to watch them instantly.
-          </h2>
+          <h2 className="hidden md:block text-center">Discover what’s on, what’s next, and where to watch.</h2>
         </div>
       </div>
     </BubbleBackground>
