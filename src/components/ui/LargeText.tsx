@@ -2,8 +2,10 @@ import { ReactNode } from 'react';
 
 interface LargeTextProps {
   children: ReactNode;
+  className?: string;
 }
 
-export const LargeText = ({ children }: LargeTextProps) => {
-  return <div className="text-lg font-semibold">{children}</div>;
+export const LargeText = ({ className, children }: LargeTextProps) => {
+  const css = 'text-lg font-semibold ' + className;
+  return <div className={css}>{children}</div>;
 };

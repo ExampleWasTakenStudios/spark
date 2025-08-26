@@ -2,8 +2,10 @@ import { ReactNode } from 'react';
 
 interface LeadTextProps {
   children: ReactNode;
+  className?: string;
 }
 
-export const LeadText = ({ children }: LeadTextProps) => {
-  return <p className="text-muted-foreground text-xl">{children}</p>;
+export const LeadText = ({ className, children }: LeadTextProps) => {
+  const css = 'text-muted-foreground text-xl ' + className;
+  return <p className={css}>{children}</p>;
 };
