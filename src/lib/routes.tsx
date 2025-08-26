@@ -30,25 +30,25 @@ export const NAV_ROUTES: RouteGroup[] = [
     routes: [
       {
         title: 'Now Playing',
-        description: 'Movies that are currently in theaters.',
+        description: 'Catch the latest blockbusters now playing on the big screen.',
         path: '/movies/now-playing',
         icon: Clapperboard,
       },
       {
         title: 'Upcoming',
-        description: 'Discover what the future holds and plan your next visit to your local theater.',
+        description: 'Discover upcoming movies and plan your next trip to theaters.',
         path: '/movies/upcoming',
         icon: CalendarHeart,
       },
       {
         title: 'Popular',
-        description: 'Discover what other people watch.',
+        description: 'Seeking inspiration? Discover what other people are currently into.',
         path: '/movies/popular',
         icon: Star,
       },
       {
         title: 'Top Rated',
-        description: 'Discover what othe rlike with Top Rated Movies only.',
+        description: 'Explore the top rated movies loved by critics and fans alike.',
         path: '/movies/top-rated',
         icon: ThumbsUp,
       },
@@ -59,25 +59,25 @@ export const NAV_ROUTES: RouteGroup[] = [
     routes: [
       {
         title: 'Airing Today',
-        description: 'Don&apos;t know what to watch tonight? See what&apos;s on.',
+        description: "Don't miss out, here's what's hitting your screen tonight.",
         path: '/tv/airing-today',
         icon: TvMinimalPlay,
       },
       {
         title: 'On the Air',
-        description: 'Get an overview of what&apos;s airing in the next seven days.',
+        description: 'Catch up with everything airing across the week, stay tuned daily.',
         path: '/tv/on-the-air',
         icon: Tv,
       },
       {
         title: 'Popular',
-        description: 'Seeking inspiration? Discover what other people are currently into.',
+        description: "Everyone's talking about these shows, see what's trending right now.",
         path: '/tv/popular',
         icon: Star,
       },
       {
         title: 'Top Rated',
-        description: 'Find the perfect match with Rop Rated shows only.',
+        description: 'Check out the highest-rated shows fans and critics both swear by.',
         path: '/tv/top-rated',
         icon: ThumbsUp,
       },
@@ -96,4 +96,28 @@ export const NAV_ROUTES: RouteGroup[] = [
   },
 ];
 
-export const ACCOUNT_ROUTES: RouteGroup[] = [];
+export const ACCOUNT_ROUTES: RouteGroup[] = [
+  {
+    title: 'My Account',
+    routes: [
+      {
+        title: 'Details',
+        path: '/me',
+        description: '',
+        icon: () => '',
+      },
+      {
+        title: 'Favorite Movies',
+        path: '/me/favorite-movies',
+        description: '',
+        icon: () => '',
+      },
+      {
+        title: 'Favorite TV Shows',
+        path: '/me/favorite-tv-shows',
+        description: '',
+        icon: () => '',
+      },
+    ],
+  },
+];
