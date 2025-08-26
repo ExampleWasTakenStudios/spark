@@ -37,7 +37,7 @@ import { Wordmark } from '@/components/ui/Wordmark';
 import { NAV_ROUTES } from '@/lib/routes';
 import { Theme, useTheme } from '@/providers/ThemeProvider';
 import { Menu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 export const NavbarFooterContainer = () => {
   const { setTheme } = useTheme();
@@ -179,10 +179,7 @@ export const NavbarFooterContainer = () => {
       </div>
 
       {/* Outlet */}
-      {/* <Outlet /> */}
-      <div className="flex h-[1000px] w-full justify-center items-center bg-linear-to-bl from-violet-500 to-fuchsia-500">
-        <p>This is a placeholder for now.</p>
-      </div>
+      <Outlet />
 
       {/* Footer */}
       <footer className="pt-20 pb-10 px-10 flex flex-col justify-center items-center gap-10">

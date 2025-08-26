@@ -7,12 +7,18 @@ import { SPARK } from '@/lib/constants';
 import { ThemeProvider } from '@/providers/ThemeProvider';
 import { TMDBProvider } from '@/providers/TmdbProvider';
 import { TMDB } from '@tdanks2000/tmdb-wrapper';
+import { Landingpage } from '@/routes/Landingpage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <NavbarFooterContainer />,
-    children: [{}],
+    children: [
+      {
+        index: true,
+        element: <Landingpage />,
+      },
+    ],
   },
 ]);
 
