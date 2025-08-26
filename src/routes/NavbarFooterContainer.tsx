@@ -5,9 +5,13 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuPortal,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import {
@@ -131,25 +135,25 @@ export const NavbarFooterContainer = () => {
                   <DropdownMenuItem disabled>Favorite Movies</DropdownMenuItem>
                   <DropdownMenuItem disabled>Favorite TV Shows</DropdownMenuItem>
                   <DropdownMenuItem disabled>My Lists</DropdownMenuItem>
-                  {/* <DropdownMenuSub>
-                  <DropdownMenuSubTrigger disabled>My Ratings</DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="w-40">
-                      <DropdownMenuItem>Movies</DropdownMenuItem>
-                      <DropdownMenuItem>TV Shows</DropdownMenuItem>
-                      <DropdownMenuItem>TV Episodes</DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger disabled>My Watchlists</DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="w-40">
-                      <DropdownMenuItem>Movies</DropdownMenuItem>
-                      <DropdownMenuItem>TV Shows</DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub> */}
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>My Ratings</DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                      <DropdownMenuSubContent className="w-40">
+                        <DropdownMenuItem disabled>Movies</DropdownMenuItem>
+                        <DropdownMenuItem disabled>TV Shows</DropdownMenuItem>
+                        <DropdownMenuItem disabled>TV Episodes</DropdownMenuItem>
+                      </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                  </DropdownMenuSub>
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>My Watchlists</DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                      <DropdownMenuSubContent className="w-40">
+                        <DropdownMenuItem disabled>Movies</DropdownMenuItem>
+                        <DropdownMenuItem disabled>TV Shows</DropdownMenuItem>
+                      </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                  </DropdownMenuSub>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuLabel>Theme</DropdownMenuLabel>
