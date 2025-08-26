@@ -64,6 +64,29 @@
     --font-manrope: "Manrope", serif;
     --font-inter: "Inter", serif;
     --font-weight-superlight: 100;
+    --animate-blur-fade: blur-fade-in 1s ease-in-out 1;
+
+    @keyframes blur-fade-in {
+        from {
+            backdrop-filter: blur(0px);
+        }
+        to {
+            backdrop-filter: blur(20px);
+        }
+    }
+
+    @keyframes blur-fade-out {
+        from {
+            backdrop-filter: blur(20px);
+        }
+        to {
+            backdrop-filter: blur(0px);
+        }
+    }
+}
+
+@utility backdrop-blur-default {
+    backdrop-filter: saturate(180%) blur(20px);    
 }
 
 /*
