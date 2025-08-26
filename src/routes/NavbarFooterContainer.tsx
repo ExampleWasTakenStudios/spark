@@ -18,8 +18,19 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
+import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import {
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+} from '@/components/ui/sidebar';
+import { NAV_ROUTES } from '@/lib/routes';
 import { Theme, useTheme } from '@/providers/ThemeProvider';
+import { Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const NavbarFooterContainer = () => {
@@ -27,11 +38,50 @@ export const NavbarFooterContainer = () => {
   return (
     <>
       <div className="flex flex-row justify-around items-center p-6">
+        <div className="sm:hidden">
+          <Sheet>
+            <SheetTrigger>
+              <Menu />
+            </SheetTrigger>
+            <SheetContent side="left">
+              <SheetHeader>
+                <SheetTitle className="font-superlight">spark</SheetTitle>
+              </SheetHeader>
+
+              <ScrollArea>
+                <SidebarProvider className="flex flex-col">
+                  {NAV_ROUTES.map((routeGroup) => {
+                    return (
+                      <SidebarGroup>
+                        <SidebarGroupLabel>{routeGroup.title}</SidebarGroupLabel>
+
+                        {routeGroup.routes.map((route) => {
+                          return (
+                            <SidebarMenuItem key={route.title}>
+                              <SidebarMenuButton asChild>
+                                <Link to={route.path}>
+                                  <route.icon />
+                                  <span>{route.title}</span>
+                                </Link>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          );
+                        })}
+                      </SidebarGroup>
+                    );
+                  })}
+                </SidebarProvider>
+              </ScrollArea>
+
+              <SheetFooter>Hello world!</SheetFooter>
+            </SheetContent>
+          </Sheet>
+        </div>
         <Link to="/" className="text-4xl font-superlight align-middle">
           spark
         </Link>
-
-        <NavigationMenu>
+        {/* Desktop Navbar */}
+        <NavigationMenu className="hidden sm:block">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Movies</NavigationMenuTrigger>
@@ -78,8 +128,8 @@ export const NavbarFooterContainer = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-
-        <div className="flex flex-row justify-between items-center gap-2">
+        {/* Desktop Account Section */}
+        <div className="sm:flex flex-row justify-between items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger>
               <Avatar>
@@ -127,14 +177,12 @@ export const NavbarFooterContainer = () => {
           </DropdownMenu>
         </div>
       </div>
-      <Separator decorative />
+      <Separator className="dark:bg-foreground" decorative />
 
       {/* <Outlet /> */}
-      <div className="h-[1500px] w-full flex justify-center items-center bg-muted">
+      <div className="hidden sm:flex h-[1500px] w-full justify-center items-center">
         <p>This is a placeholder for now.</p>
       </div>
-
-      <div></div>
     </>
   );
 };
