@@ -14,6 +14,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { MutedText } from '@/components/ui/MutedText';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -32,6 +33,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from '@/components/ui/sidebar';
+import { Wordmark } from '@/components/ui/Wordmark';
 import { NAV_ROUTES } from '@/lib/routes';
 import { Theme, useTheme } from '@/providers/ThemeProvider';
 import { Menu } from 'lucide-react';
@@ -51,7 +53,9 @@ export const NavbarFooterContainer = () => {
               </SheetTrigger>
               <SheetContent side="left">
                 <SheetHeader>
-                  <SheetTitle className="font-superlight">spark</SheetTitle>
+                  <SheetTitle className="font-superlight">
+                    <Wordmark />
+                  </SheetTitle>
                 </SheetHeader>
 
                 <ScrollArea>
@@ -84,7 +88,7 @@ export const NavbarFooterContainer = () => {
             </Sheet>
           </div>
           <Link to="/" className="text-4xl font-superlight align-middle">
-            spark
+            <Wordmark />
           </Link>
           {/* Desktop Navbar */}
           <NavigationMenu delayDuration={0} className="hidden sm:block">
@@ -174,10 +178,37 @@ export const NavbarFooterContainer = () => {
         <Separator className="dark:bg-foreground" decorative />
       </div>
 
+      {/* Outlet */}
       {/* <Outlet /> */}
-      <div className="hidden sm:flex h-[1000px] w-full justify-center items-center bg-linear-to-bl from-violet-500 to-fuchsia-500">
+      <div className="flex h-[1000px] w-full justify-center items-center bg-linear-to-bl from-violet-500 to-fuchsia-500">
         <p>This is a placeholder for now.</p>
       </div>
+
+      {/* Footer */}
+      <footer className="pt-20 pb-10 px-10 flex flex-col justify-center items-center gap-10">
+        <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row justify-around items-center w-screen">
+          <div>
+            <Wordmark />
+          </div>
+          <div>
+            <div className="flex flex-col sm:flex-row items-baseline gap-2 ml-6">
+              <MutedText>powered&nbsp;by</MutedText>
+              <a href="https://www.themoviedb.org" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+                  alt="Logo of The Movie Database"
+                  width={120}
+                  height={120}
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <MutedText className="text-center">
+          &copy; ExampleWasTaken Studios and its contributors 2025
+          {new Date().getFullYear() === 2025 ? '' : `-${new Date().getFullYear()}`}
+        </MutedText>
+      </footer>
     </>
   );
 };
