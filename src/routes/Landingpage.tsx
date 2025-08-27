@@ -14,7 +14,7 @@ export const Landingpage = () => {
         sixth: '255,46,84',
       }}
     >
-      <div className="relative z-10 w-full h-full bg-background/40">
+      <div className="relative z-10 w-full h-full bg-gradient-to-b from-background -from-10% to-background/40 to-25%">
         <div className="mt-52 px-32 flex flex-col items-center gap-10">
           <WritingText
             text="Discover. Explore. Enjoy."
