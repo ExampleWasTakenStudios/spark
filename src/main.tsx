@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './tailwind.css';
-import { NavbarFooterContainer } from '@/routes/NavbarFooterContainer';
+import { NavbarFooterContainer } from '@/routes/layouts/NavbarFooterLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { SPARK } from '@/lib/constants';
 import { ThemeProvider } from '@/providers/ThemeProvider';
