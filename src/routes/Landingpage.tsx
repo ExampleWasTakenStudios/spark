@@ -23,9 +23,11 @@ export const Landingpage = () => {
               delay: 0.1,
             }}
             inView
-            className="text-center text-7xl font-semibold tracking-tighter"
+            className="select-none text-center text-7xl font-semibold tracking-tighter"
           />
-          <h2 className="hidden md:block text-center">Discover what’s on, what’s next, and where to watch.</h2>
+          <h2 className="hidden md:block text-center select-none">
+            Discover what’s on, what’s next, and where to watch.
+          </h2>
         </div>
       </div>
     </BubbleBackground>
